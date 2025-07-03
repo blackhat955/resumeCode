@@ -5,20 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Durgesh - Data Science & Software Engineer</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
 </head>
 <body>
-    <button class="theme-toggle" onclick="toggleTheme()" title="Toggle dark/light mode">🌓</button>
+    <!-- p5.js Background Canvas -->
+    <div id="p5-canvas-container"></div>
     
-
+    <button class="theme-toggle" onclick="toggleTheme()" title="Toggle dark/light mode">🌓</button>
     
     <div class="view-container active">
         <div class="container">
         <div class="left-panel">
             <div class="summary-section">
                 <h3>/// &lt;summary&gt;</h3>
-                <p>/// Seeking opportunities in Data Science & Software Engineering</p>
-                <p>/// Specializing in C++, Python, and mobile development</p>
-                <p>/// Master's student with strong backend and mobile expertise</p>
+                <p>/// Graduate student in Software Engineering & Data Science with expertise in C++ performance optimization</p>
+                <p>/// Specialized in multithreading, embedded systems, and high-performance application development</p>
+                <p>/// Built scalable applications using trie-based indexing and custom memory management, achieving 3x faster query processing</p>
+                <p>/// Experienced in real-time systems processing 500K+ data points with 35% computational efficiency improvements</p>
+                <p>/// Passionate about solving low-level performance challenges in production and embedded environments</p>
                 <p>/// &lt;/summary&gt;</p>
             </div>
 
@@ -225,6 +229,208 @@
                 document.body.setAttribute('data-theme', 'dark');
             }
         });
+
+        // p5.js Animation Variables
+        let particles = [];
+        let spheres = [];
+        let rotationX = 0;
+        let rotationY = 0;
+        let mouseInfluence = { x: 0, y: 0 };
+
+        // p5.js sketch
+        function sketch(p) {
+            p.setup = function() {
+                let canvas = p.createCanvas(p.windowWidth, p.windowHeight, p.WEBGL);
+                canvas.parent('p5-canvas-container');
+                canvas.style('position', 'fixed');
+                canvas.style('top', '0');
+                canvas.style('left', '0');
+                canvas.style('z-index', '-1');
+                canvas.style('pointer-events', 'none');
+
+                // Initialize particles
+                for (let i = 0; i < 100; i++) {
+                    particles.push({
+                        x: p.random(-400, 400),
+                        y: p.random(-400, 400),
+                        z: p.random(-400, 400),
+                        color: p.random(['#4a90e2', '#00cccc', '#9966cc'])
+                    });
+                }
+
+                // Initialize wireframe spheres
+                spheres.push({
+                    radius: 150,
+                    x: 0, y: 0, z: 0,
+                    rotSpeed: { x: 0.005, y: 0.008, z: 0.003 },
+                    rotation: { x: 0, y: 0, z: 0 },
+                    color: '#4a90e2',
+                    opacity: 150
+                });
+
+                // Smaller spheres
+                for (let i = 0; i < 3; i++) {
+                    let angle = (i / 3) * p.TWO_PI;
+                    spheres.push({
+                        radius: 60 + i * 10,
+                        x: p.cos(angle) * 200,
+                        y: p.sin(angle) * 100,
+                        z: -50 - i * 30,
+                        rotSpeed: {
+                            x: p.random(-0.02, 0.02),
+                            y: p.random(-0.02, 0.02),
+                            z: p.random(-0.02, 0.02)
+                        },
+                        rotation: { x: 0, y: 0, z: 0 },
+                        color: p.color(p.map(i, 0, 2, 180, 220), 80, 90),
+                        opacity: 100 - i * 20,
+                        floatSpeed: p.random(0.005, 0.015),
+                        originalY: p.sin(angle) * 100
+                    });
+                }
+            };
+
+            p.draw = function() {
+                p.background(0, 0);
+                
+                // Mouse interaction
+                mouseInfluence.x = p.lerp(mouseInfluence.x, (p.mouseX - p.width/2) * 0.001, 0.05);
+                mouseInfluence.y = p.lerp(mouseInfluence.y, (p.mouseY - p.height/2) * 0.001, 0.05);
+                
+                p.rotateX(mouseInfluence.y);
+                p.rotateY(mouseInfluence.x);
+
+                // Draw particles
+                p.stroke(255, 100);
+                p.strokeWeight(2);
+                particles.forEach(particle => {
+                    p.push();
+                    p.translate(particle.x, particle.y, particle.z);
+                    p.stroke(particle.color);
+                    p.point(0, 0, 0);
+                    p.pop();
+                });
+
+                // Rotate particles slowly
+                rotationX += 0.001;
+                rotationY += 0.002;
+                particles.forEach(particle => {
+                    let temp = particle.x;
+                    particle.x = particle.x * p.cos(rotationY) - particle.z * p.sin(rotationY);
+                    particle.z = temp * p.sin(rotationY) + particle.z * p.cos(rotationY);
+                });
+
+                // Draw wireframe spheres
+                spheres.forEach((sphere, index) => {
+                    p.push();
+                    
+                    // Update rotation
+                    sphere.rotation.x += sphere.rotSpeed.x;
+                    sphere.rotation.y += sphere.rotSpeed.y;
+                    sphere.rotation.z += sphere.rotSpeed.z;
+                    
+                    // Floating motion for smaller spheres
+                    let yPos = sphere.y;
+                    if (sphere.floatSpeed) {
+                        yPos = sphere.originalY + p.sin(p.millis() * sphere.floatSpeed + index) * 30;
+                    }
+                    
+                    p.translate(sphere.x, yPos, sphere.z);
+                    p.rotateX(sphere.rotation.x);
+                    p.rotateY(sphere.rotation.y);
+                    p.rotateZ(sphere.rotation.z);
+                    
+                    // Draw wireframe sphere
+                    p.stroke(sphere.color);
+                    p.strokeWeight(1);
+                    p.noFill();
+                    
+                    // Custom wireframe sphere drawing
+                    drawWireframeSphere(p, sphere.radius, sphere.opacity);
+                    
+                    p.pop();
+                });
+
+                // Draw floating geometric shapes
+                drawFloatingShapes(p);
+            };
+
+            p.windowResized = function() {
+                p.resizeCanvas(p.windowWidth, p.windowHeight);
+            };
+        }
+
+        function drawWireframeSphere(p, radius, opacity) {
+            let detail = 16;
+            p.stroke(74, 144, 226, opacity);
+            
+            // Draw latitude lines
+            for (let i = 0; i < detail; i++) {
+                let lat = p.map(i, 0, detail - 1, -p.PI/2, p.PI/2);
+                let r = radius * p.cos(lat);
+                let y = radius * p.sin(lat);
+                
+                p.beginShape();
+                p.noFill();
+                for (let j = 0; j <= detail * 2; j++) {
+                    let lon = p.map(j, 0, detail * 2, 0, p.TWO_PI);
+                    let x = r * p.cos(lon);
+                    let z = r * p.sin(lon);
+                    p.vertex(x, y, z);
+                }
+                p.endShape();
+            }
+            
+            // Draw longitude lines
+            for (let i = 0; i < detail; i++) {
+                let lon = p.map(i, 0, detail, 0, p.TWO_PI);
+                
+                p.beginShape();
+                p.noFill();
+                for (let j = 0; j <= detail; j++) {
+                    let lat = p.map(j, 0, detail, -p.PI/2, p.PI/2);
+                    let r = radius * p.cos(lat);
+                    let x = r * p.cos(lon);
+                    let y = radius * p.sin(lat);
+                    let z = r * p.sin(lon);
+                    p.vertex(x, y, z);
+                }
+                p.endShape();
+            }
+        }
+
+        function drawFloatingShapes(p) {
+            for (let i = 0; i < 8; i++) {
+                p.push();
+                
+                let x = p.sin(p.millis() * 0.001 + i) * 200;
+                let y = p.cos(p.millis() * 0.0008 + i) * 150;
+                let z = p.sin(p.millis() * 0.0012 + i) * 100;
+                
+                p.translate(x, y, z);
+                p.rotateX(p.millis() * 0.01 + i);
+                p.rotateY(p.millis() * 0.008 + i);
+                p.rotateZ(p.millis() * 0.012 + i);
+                
+                p.stroke(p.map(i, 0, 7, 140, 220), 70, 90, 80);
+                p.strokeWeight(1);
+                p.noFill();
+                
+                // Draw different shapes
+                if (i % 3 === 0) {
+                    p.box(20);
+                } else if (i % 3 === 1) {
+                    p.sphere(15, 8, 6);
+                } else {
+                    p.cone(15, 25, 6);
+                }
+                
+                p.pop();
+            }
+        }
+
+        // Initialize p5.js sketch
+        new p5(sketch);
     </script>
 </body>
 </html>
