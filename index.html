@@ -7,156 +7,224 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
+    <button class="theme-toggle" onclick="toggleTheme()" title="Toggle dark/light mode">🌓</button>
+    
+
+    
+    <div class="view-container active">
+        <div class="container">
         <div class="left-panel">
-            <div class="profile-section">
-                <img src="myImg.jpg" alt="Durgesh" class="profile-image">
-                <div class="profile-info">
-                    <h1>DURGESH</h1>
-                    <h2>Data Science & Software Engineer</h2>
-                    <div class="contact-info">
-                        <p><strong>Phone:</strong> +1 (812)-778-5427</p>
-                        <p><strong>Email:</strong> durgeshse98@gmail.com</p>
-                        <p><strong>LinkedIn:</strong> linkedin.com/durgesh98</p>
-                        <p><strong>GitHub:</strong> github.com/blackhat955</p>
-                        <p><strong>Portfolio:</strong> Available</p>
+            <div class="summary-section">
+                <h3>/// &lt;summary&gt;</h3>
+                <p>/// Seeking opportunities in Data Science & Software Engineering</p>
+                <p>/// Specializing in C++, Python, and mobile development</p>
+                <p>/// Master's student with strong backend and mobile expertise</p>
+                <p>/// &lt;/summary&gt;</p>
+            </div>
+
+            <div class="information-section">
+                <h3>public class INFORMATION</h3>
+                <div class="info-content">
+                    <img src="myImg.jpg" alt="Durgesh" class="profile-image">
+                    <div class="info-details">
+                        <p><span class="keyword">public</span> <span class="keyword">string</span> <span class="variable">NAME</span> = <span class="string">"DURGESH"</span>;</p>
+                        <p><span class="keyword">public</span> <span class="keyword">string</span> <span class="variable">TITLE</span> = <span class="string">"Data Science & Software Engineer"</span>;</p>
+                        <p><span class="keyword">public</span> <span class="keyword">string</span> <span class="variable">EMAIL</span> = <span class="string">"durgeshse98@gmail.com"</span>;</p>
+                        <p><span class="keyword">public</span> <span class="keyword">string</span> <span class="variable">PHONE</span> = <span class="string">"+1 (812)-778-5427"</span>;</p>
+                        <p><span class="keyword">public</span> <span class="keyword">string[]</span> <span class="variable">LOCATION</span> = {<span class="string">"Bloomington"</span>, <span class="string">"IN"</span>, <span class="string">"USA"</span>};</p>
+                        <p><span class="keyword">public</span> <span class="keyword">string</span> <span class="variable">LINKEDIN</span> = <span class="string">"</span><a href='https://linkedin.com/in/durgesh98' target='_blank'><span class="string">linkedin.com/durgesh98</span></a><span class="string">"</span>;</p>
+                        <p><span class="keyword">public</span> <span class="keyword">string</span> <span class="variable">GITHUB</span> = <span class="string">"</span><a href='https://github.com/blackhat955' target='_blank'><span class="string">github.com/blackhat955</span></a><span class="string">"</span>;</p>
+                        <p><span class="keyword">public</span> <span class="keyword">bool</span> <span class="variable">PORTFOLIO_AVAILABLE</span> = <span class="keyword">true</span>;</p>
                     </div>
                 </div>
             </div>
 
+            <div class="languages-section">
+                <h3>public enum PROGRAMMING_LANGUAGES()</h3>
+                <div class="enum-content">
+                    <p>C++, C#, Python,</p>
+                    <p>Java, Kotlin</p>
+                </div>
+            </div>
+
+            <div class="databases-section">
+                <h3>public enum DATABASES()</h3>
+                <div class="enum-content">
+                    <p>SQL, MySQL, PostgreSQL,</p>
+                    <p>MongoDB, DynamoDB</p>
+                </div>
+            </div>
+
+            <div class="frameworks-section">
+                <h3>public enum FRAMEWORKS_LIBRARIES()</h3>
+                <div class="enum-content">
+                    <p>thread, mutex, condition_variable,</p>
+                    <p>optional, chrono, priority_queue,</p>
+                    <p>unique_ptr, shared_ptr</p>
+                </div>
+            </div>
+
+            <div class="mobile-section">
+                <h3>public enum MOBILE_DEVELOPMENT()</h3>
+                <div class="enum-content">
+                    <p>Jetpack Compose, XML layouts,</p>
+                    <p>UIKit, RoomDB, JSON Server</p>
+                </div>
+            </div>
+
+            <div class="tools-section">
+                <h3>public enum TOOLS_TECHNOLOGIES()</h3>
+                <div class="enum-content">
+                    <p>Git, RabbitMQ, Docker,</p>
+                    <p>Kubernetes, AWS (S3, CloudFront,</p>
+                    <p>SQS, CloudWatch), Selenium</p>
+                </div>
+            </div>
+
             <div class="skills-section">
-                <h3>PROGRAMMING LANGUAGES</h3>
-                <ul>
-                    <li>C++, C#, Python</li>
-                    <li>Java, Kotlin</li>
-                </ul>
+                <h3>public enum ADDITIONAL_SKILLS()</h3>
+                <div class="enum-content">
+                    <p>Agile Development Methodology,</p>
+                    <p>REST APIs Design, Code Reviews,</p>
+                    <p>Object-Oriented Design</p>
+                </div>
+            </div>
 
-                <h3>DATABASES</h3>
-                <ul>
-                    <li>SQL, MySQL, PostgreSQL</li>
-                    <li>MongoDB, DynamoDB</li>
-                </ul>
-
-                <h3>FRAMEWORKS & LIBRARIES</h3>
-                <ul>
-                    <li>thread, mutex, condition_variable</li>
-                    <li>optional, chrono, priority_queue</li>
-                    <li>unique_ptr, shared_ptr</li>
-                </ul>
-
-                <h3>MOBILE DEVELOPMENT</h3>
-                <ul>
-                    <li>Jetpack Compose, XML layouts</li>
-                    <li>UIKit, RoomDB, JSON Server</li>
-                </ul>
-
-                <h3>TOOLS & TECHNOLOGIES</h3>
-                <ul>
-                    <li>Git, RabbitMQ, Docker</li>
-                    <li>Kubernetes, AWS (S3, CloudFront)</li>
-                    <li>SQS, CloudWatch, Selenium</li>
-                </ul>
-
-                <h3>ADDITIONAL SKILLS</h3>
-                <ul>
-                    <li>Agile Development Methodology</li>
-                    <li>REST APIs Design, Code Reviews</li>
-                    <li>Object-Oriented Design</li>
-                </ul>
-
-                <h3>CERTIFICATION</h3>
-                <ul>
-                    <li>ACM ICPC Regionalist 2020</li>
-                </ul>
+            <div class="certification-section">
+                <h3>public enum CERTIFICATIONS()</h3>
+                <div class="enum-content">
+                    <p>ACM ICPC Regionalist 2020</p>
+                </div>
             </div>
         </div>
 
         <div class="right-panel">
             <div class="education-section">
-                <h3>EDUCATION</h3>
-                
-                <div class="education-item">
-                    <h4>Indiana University Bloomington</h4>
-                    <p><strong>Degree:</strong> Master of Science in Data Science</p>
-                    <p><strong>GPA:</strong> 3.62/4</p>
-                    <p><strong>Location:</strong> Bloomington, IN, USA</p>
-                    <p><strong>Duration:</strong> August 2023 - May 2025</p>
+                <h3><span class="keyword">public</span> <span class="keyword">partial</span> <span class="keyword">class</span> <span class="class-name">EDUCATION</span> : <span class="class-name">Universities</span></h3>
+                <div class="education-block">
+                    <p><span class="keyword">private</span> <span class="keyword">void</span> <span class="function">IndianaUniversityBloomington</span>()</p>
+                    <p>{</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">var</span> <span class="variable">_Degree</span> = <span class="string">"Master of Science in Data Science"</span>;</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">var</span> <span class="variable">_GPA</span> = <span class="number">3.62</span>/<span class="number">4</span>;</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">var</span> <span class="variable">_Location</span> = <span class="string">"Bloomington, IN, USA"</span>;</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">var</span> <span class="variable">_Duration</span> = <span class="function">Range</span>(start: <span class="string">"August 2023"</span>, end: <span class="string">"May 2025"</span>);</p>
+                    <p>}</p>
                 </div>
-
-                <div class="education-item">
-                    <h4>University Of Mumbai</h4>
-                    <p><strong>Degree:</strong> Bachelor of Engineering in Information Technology</p>
-                    <p><strong>GPA:</strong> 9.3/10</p>
-                    <p><strong>Location:</strong> Mumbai, India</p>
-                    <p><strong>Duration:</strong> August 2018 - May 2022</p>
+                
+                <div class="education-block">
+                    <p><span class="keyword">private</span> <span class="keyword">void</span> <span class="function">UniversityOfMumbai</span>()</p>
+                    <p>{</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">var</span> <span class="variable">_Degree</span> = <span class="string">"Bachelor of Engineering in Information Technology"</span>;</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">var</span> <span class="variable">_GPA</span> = <span class="number">9.3</span>/<span class="number">10</span>;</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">var</span> <span class="variable">_Location</span> = <span class="string">"Mumbai, India"</span>;</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">var</span> <span class="variable">_Duration</span> = <span class="function">Range</span>(start: <span class="string">"August 2018"</span>, end: <span class="string">"May 2022"</span>);</p>
+                    <p>}</p>
                 </div>
             </div>
 
-            <div class="experience-section">
-                <h3>PROFESSIONAL EXPERIENCE</h3>
+            <div class="experiences-section">
+                <h3><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="class-name">PROFESSIONAL_EXPERIENCE</span></h3>
+                <div class="experience-block">
+                    <p><span class="keyword">public</span> <span class="keyword">void</span> <span class="function">TeachingAssistant_MobileAppDevelopment</span>()</p>
+                    <p>{</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">var</span> <span class="variable">_Position</span> = <span class="string">"Mobile App Development Using Kotlin, Teaching Assistance"</span>;</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">var</span> <span class="variable">_Location</span> = <span class="string">"Bloomington, USA"</span>;</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">var</span> <span class="variable">_Duration</span> = <span class="function">Range</span>(start: <span class="string">"August 2024"</span>, end: <span class="string">"Present"</span>);</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">var</span> <span class="variable">_Technologies</span> = [<span class="string">"Android"</span>, <span class="string">"Kotlin"</span>, <span class="string">"Jetpack Compose"</span>, <span class="string">"XML Layouts"</span>, <span class="string">"Debugging"</span>, <span class="string">"Teaching"</span>];</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="achievement-comment">// Mentored 100+ graduate students in native Android development, covering Jetpack Compose and XML layouts</span></p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="achievement-comment">// Assisted students in reducing error rates by 15% through troubleshooting, debugging, and resolving technical issues</span></p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="achievement-comment">// Collaborated with professors to prepare assignments, review solutions, and clarify doubts, enhancing students' understanding</span></p>
+                    <p>}</p>
+                </div>
                 
-                <div class="experience-item">
-                    <h4>Mobile App Development Using Kotlin, Teaching Assistance</h4>
-                    <p><strong>Location:</strong> Bloomington, USA</p>
-                    <p><strong>Duration:</strong> August 2024 – Present</p>
-                    <p><strong>Technologies:</strong> Docker, Spring Boot, Kotlin, Jetpack Compose, Java, RabbitMQ, MongoDB</p>
-                    <p>• Mentored 100+ graduate students in native Android development, covering Jetpack Compose and XML layouts.</p>
-                    <p>• Assisted students in reducing error rates by 15% through troubleshooting, debugging, and resolving technical issues.</p>
-                    <p>• Collaborated with professors to prepare assignments, review solutions, and clarify doubts, enhancing students' understanding.</p>
+                <div class="experience-block">
+                    <p><span class="keyword">public</span> <span class="keyword">void</span> <span class="function">SoftwareEngineer_ProgrammersArmy</span>()</p>
+                    <p>{</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">var</span> <span class="variable">_Position</span> = <span class="string">"Software Engineer"</span>;</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">var</span> <span class="variable">_Location</span> = <span class="string">"Mumbai, India"</span>;</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">var</span> <span class="variable">_Duration</span> = <span class="function">Range</span>(start: <span class="string">"October 2022"</span>, end: <span class="string">"July 2023"</span>);</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">var</span> <span class="variable">_Technologies</span> = [<span class="string">"C++"</span>, <span class="string">"HashMap"</span>, <span class="string">"Tries"</span>, <span class="string">"Memory Management"</span>, <span class="string">"AWS EC2"</span>, <span class="string">"Thread"</span>];</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="achievement-comment">// Reduced API response time by 25% via Node.js microservices, optimizing database queries and caching, handling 10K+ requests/second</span></p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="achievement-comment">// Optimized C++ search engine with Trie + Hash Map, achieving 40% faster queries and reducing memory usage by 30%</span></p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="achievement-comment">// Enhanced backend concurrency using C++ multithreading, improving compute efficiency by 35% and processing 500K+ data points in real-time</span></p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="achievement-comment">// Deployed scalable services on AWS EC2, ensuring 99.99% uptime and handling 1M+ monthly active users</span></p>
+                    <p>}</p>
                 </div>
-
-                <div class="experience-item">
-                    <h4>Software Engineer, Programmers Army</h4>
-                    <p><strong>Location:</strong> Mumbai, India</p>
-                    <p><strong>Duration:</strong> October 2022 – July 2023</p>
-                    <p><strong>Technologies:</strong> C++, HashMap, Tries, Memory Management, AWS EC2, Thread</p>
-                    <p>• Reduced API response time by 25% via Node.js microservices, optimizing database queries and caching, handling 10K+ requests/second.</p>
-                    <p>• Optimized C++ search engine with Trie + Hash Map, achieving 40% faster queries and reducing memory usage by 30%.</p>
-                    <p>• Enhanced backend concurrency using C++ multithreading, improving compute efficiency by 35% and processing 500K+ data points in real-time.</p>
-                    <p>• Deployed scalable services on AWS EC2, ensuring 99.99% uptime and handling 1M+ monthly active users.</p>
-                </div>
-
-                <div class="experience-item">
-                    <h4>Software Engineer Intern, ByteLearn</h4>
-                    <p><strong>Location:</strong> San Francisco, USA (Remote)</p>
-                    <p><strong>Duration:</strong> June 2022 – September 2022</p>
-                    <p><strong>Technologies:</strong> C++17, CMake, STL, Multithreading, thread, STL Algorithms, mutex</p>
-                    <p>• Designed and implemented 3+ C++17 modules compiled with CMake, promoting modular builds and cross-platform integration.</p>
-                    <p>• Built components using STL containers like vector, map, and unordered_map to manage memory structures efficiently.</p>
-                    <p>• Optimized performance by applying STL algorithms like sort, find_if, and accumulate for efficient data processing.</p>
-                    <p>• Implemented multithreaded task execution using thread, mutex, and condition_variable to parallelize workload and reduce response time by 30%.</p>
+                
+                <div class="experience-block">
+                    <p><span class="keyword">public</span> <span class="keyword">void</span> <span class="function">SoftwareEngineerIntern_ByteLearn</span>()</p>
+                    <p>{</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">var</span> <span class="variable">_Position</span> = <span class="string">"Software Engineer Intern"</span>;</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">var</span> <span class="variable">_Location</span> = <span class="string">"San Francisco, USA (Remote)"</span>;</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">var</span> <span class="variable">_Duration</span> = <span class="function">Range</span>(start: <span class="string">"June 2022"</span>, end: <span class="string">"September 2022"</span>);</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">var</span> <span class="variable">_Technologies</span> = [<span class="string">"C++17"</span>, <span class="string">"CMake"</span>, <span class="string">"STL"</span>, <span class="string">"Multithreading"</span>, <span class="string">"thread"</span>, <span class="string">"STL Algorithms"</span>, <span class="string">"mutex"</span>];</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="achievement-comment">// Designed and implemented 3+ C++17 modules compiled with CMake, promoting modular builds and cross-platform integration</span></p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="achievement-comment">// Built components using STL containers like vector, map, and unordered_map to manage memory structures efficiently</span></p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="achievement-comment">// Optimized performance by applying STL algorithms like sort, find_if, and accumulate for efficient data processing</span></p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="achievement-comment">// Implemented multithreaded task execution using thread, mutex, and condition_variable to parallelize workload and reduce response time by 30%</span></p>
+                    <p>}</p>
                 </div>
             </div>
-
+            
             <div class="projects-section">
-                <h3>PROJECTS</h3>
+                <h3><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="class-name">PROJECTS</span></h3>
+                <div class="project-block">
+                    <p><span class="keyword">public</span> <span class="keyword">void</span> <span class="function">HighPerformanceTextSearchEngine</span>()</p>
+                    <p>{</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">var</span> <span class="variable">_Technologies</span> = [<span class="string">"C++"</span>, <span class="string">"Trie"</span>, <span class="string">"Hash Map"</span>, <span class="string">"Multithreading"</span>, <span class="string">"Custom Memory Management"</span>, <span class="string">"CLI"</span>];</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="achievement-comment">// Developed an efficient text search engine with Trie and Hash Map indexing, improving search speed by 40%</span></p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="achievement-comment">// Implemented fuzzy search using Levenshtein Distance, allowing approximate keyword matching with error tolerance</span></p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="achievement-comment">// Optimized memory usage with custom memory management, reducing allocation overhead in large-scale text datasets</span></p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="achievement-comment">// Integrated multithreading with std::thread, achieving 3x faster query processing through parallel execution</span></p>
+                    <p>}</p>
+                </div>
                 
-                <div class="project-item">
-                    <h4>High-Performance Text Search Engine</h4>
-                    <p><strong>Technologies:</strong> C++, Trie, Hash Map, Multithreading, Custom Memory Management, CLI</p>
-                    <p>• Developed an efficient text search engine with Trie and Hash Map indexing, improving search speed by 40%.</p>
-                    <p>• Implemented fuzzy search using Levenshtein Distance, allowing approximate keyword matching with error tolerance.</p>
-                    <p>• Optimized memory usage with custom memory management, reducing allocation overhead in large-scale text datasets.</p>
-                    <p>• Integrated multithreading with std::thread, achieving 3x faster query processing through parallel execution.</p>
+                <div class="project-block">
+                    <p><span class="keyword">public</span> <span class="keyword">void</span> <span class="function">CatalogApp</span>()</p>
+                    <p>{</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">var</span> <span class="variable">_Technologies</span> = [<span class="string">"Kotlin"</span>, <span class="string">"C++"</span>, <span class="string">"Platform Channels"</span>, <span class="string">"Material Design"</span>, <span class="string">"UI Testing"</span>];</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="achievement-comment">// Built a modular Flutter-based mobile catalog app with clean separation across pages, widgets, and utility layers, supporting scalable development and clean architecture</span></p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="achievement-comment">// Integrated native C++ modules using Flutter's platform channels to handle performance-intensive tasks, enabling seamless Dart–C++ interoperability</span></p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="achievement-comment">// Designed reusable UI components including custom drawers and dynamic product tiles, supporting both light and dark themes with responsive layout behavior</span></p>
+                    <p>}</p>
                 </div>
-
-                <div class="project-item">
-                    <h4>Catalog App</h4>
-                    <p><strong>Technologies:</strong> Kotlin, C++, Platform Channels, Material Design, UI Testing</p>
-                    <p>• Built a modular Flutter-based mobile catalog app with clean separation across pages, widgets, and utility layers, supporting scalable development and clean architecture.</p>
-                    <p>• Integrated native C++ modules using Flutter's platform channels to handle performance-intensive tasks, enabling seamless Dart–C++ interoperability.</p>
-                    <p>• Designed reusable UI components including custom drawers and dynamic product tiles, supporting both light and dark themes with responsive layout behavior.</p>
-                </div>
-
-                <div class="project-item">
-                    <h4>TicTacToe</h4>
-                    <p><strong>Technologies:</strong> Kotlin, Android SDK, MVVM, Hilt (Dagger), Fragments, SharedPreferences</p>
-                    <p>• Developed a fully interactive 2-player TicTacToe game in Kotlin using MVVM architecture, delivering a smooth and intuitive user experience.</p>
-                    <p>• Integrated Hilt (Dagger) for dependency injection, simplifying lifecycle management and promoting scalable architecture.</p>
-                    <p>• Designed modular UI with Fragments for player input, game board, and splash screen, enhancing code reusability and separation of concerns.</p>
+                
+                <div class="project-block">
+                    <p><span class="keyword">public</span> <span class="keyword">void</span> <span class="function">TicTacToe</span>()</p>
+                    <p>{</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">var</span> <span class="variable">_Technologies</span> = [<span class="string">"Kotlin"</span>, <span class="string">"Android SDK"</span>, <span class="string">"MVVM"</span>, <span class="string">"Hilt (Dagger)"</span>, <span class="string">"Fragments"</span>, <span class="string">"SharedPreferences"</span>];</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="achievement-comment">// Developed a fully interactive 2-player TicTacToe game in Kotlin using MVVM architecture, delivering a smooth and intuitive user experience</span></p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="achievement-comment">// Integrated Hilt (Dagger) for dependency injection, simplifying lifecycle management and promoting scalable architecture</span></p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="achievement-comment">// Designed modular UI with Fragments for player input, game board, and splash screen, enhancing code reusability and separation of concerns</span></p>
+                    <p>}</p>
                 </div>
             </div>
+
+        </div>
         </div>
     </div>
+    
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            const currentTheme = body.getAttribute('data-theme');
+            
+            if (currentTheme === 'dark') {
+                body.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'light');
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+        
+        // Load saved theme on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                document.body.setAttribute('data-theme', 'dark');
+            }
+        });
+    </script>
 </body>
 </html>
